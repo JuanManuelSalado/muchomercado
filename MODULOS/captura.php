@@ -13,6 +13,12 @@
             display: flex;
             flex: 1; /* Permite que el contenedor principal se expanda */
         }
+        #bloque1, #bloque2, #bloque3 {
+            border: 1px solid black;
+            padding: 10px;
+            flex: 1; /* Distribuye el espacio equitativamente */
+            overflow: auto; /* Agrega scroll si el contenido se desborda */
+        }
         #parte1, #parte2, #parte3 {
             border: 1px solid black;
             padding: 10px;
@@ -23,18 +29,33 @@
             width: 100%;
             border-collapse: collapse;
         }
+                
         th, td {
             border: 1px solid black;
-            padding: 5px;
-            text-align: left;
+            padding: 8px;
+            text-align: right; /* Alinea el texto a la derecha */
+        }
+        /* Estilo para inputs horizontales */
+        .horizontal-inputs > * {
+            display: inline-block; /* Muestra los elementos en línea */
+            width: 15%; /* Ajusta el ancho según necesites */
+            margin-right: 5px; /* Espacio entre inputs */
         }
     </style>
 </head>
 <body>
 
 <div id="contenedor">
-    <div id="parte1">
-        <h2>Tabla de Datos</h2>
+    <div id="bloque1">
+        <div class="horizontal-inputs">
+            <input type="text" id="codigo" placeholder="Código">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="number" id="cantidad" placeholder="Cantidad">
+            <input type="number" id="precio" placeholder="Precio">
+            <input type="number" id="total" placeholder="Total" readonly>
+            <button onclick="agregarFila()">Agregar</button>
+        </div>
+
         <table id="tablaDatos">
             <thead>
                 <tr>
@@ -48,24 +69,52 @@
             <tbody>
             </tbody>
         </table>
+
+        <button onclick="guardarDatos()">Guardar Datos</button>
+
+        <script src="script.js"></script>
     </div>
 
-    <div id="parte2">
-        <h2>Ingreso de Datos</h2>
-        <form id="formularioDatos">
-            Código: <input type="text" id="codigo" name="codigo"><br>
-            Nombre: <input type="text" id="nombre" name="nombre"><br>
-            Cantidad: <input type="number" id="cantidad" name="cantidad"><br>
-            Precio: <input type="number" id="precio" name="precio"><br>
-            Total: <input type="number" id="total" name="total" value="precio*candidad" readonly><br>
-            <button type="button" onclick="agregarDatos()">Agregar</button>
-        </form>
-    </div>
+    <div id="bloque2">
 
-    <div id="parte3">
-        <h2>Características del Código</h2>
-        <div id="caracteristicas">
-            </div>
+    
+        <div id="parte1">
+            <h2>Tabla de Datos</h2>
+            <table id="tablaDatos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="parte2">
+            <h2>Ingreso de Datos</h2>
+            <form id="formularioDatos">
+                Código: <input type="text" id="codigo" name="codigo"><br>
+                Nombre: <input type="text" id="nombre" name="nombre"><br>
+                Cantidad: <input type="number" id="cantidad" name="cantidad"><br>
+                Precio: <input type="number" id="precio" name="precio"><br>
+                Total: <input type="number" id="total" name="total" value="precio*candidad" readonly><br>
+                <button type="button" onclick="agregarDatos()">Agregar</button>
+            </form>
+        </div>
+
+        <div id="parte3">
+            <h2>Características del Código</h2>
+            <div id="caracteristicas">
+                </div>
+        </div>
+    </div>
+    <div id="bloque3">
+
     </div>
 </div>
 
