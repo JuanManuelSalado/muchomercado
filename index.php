@@ -17,7 +17,7 @@
         <button onclick="login()">Iniciar Sesión</button>
     </div>
     <div class="menu-container" id="menu-container">
-        <h2>Menú Principal</h2>      
+        <h2>Menú Principal</h2> 
         <button onclick="option1()">Opción 1</button>
         <button onclick="option2()">Opción 2</button>
         <button onclick="option3()">Opción 3</button>
@@ -38,7 +38,7 @@
         function option1() { location.href = "lectura.php"  }
         function option2() { location.href = "MODULOS/captura.php"; }
         function option3() { alert('Opción 3 seleccionada'); }
-        
+            
 
     </script>
     

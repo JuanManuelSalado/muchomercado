@@ -1,5 +1,6 @@
 function calcularTotal() {
     let cantidad = parseFloat(document.getElementById("cantidad").value) || 0;
+
     let precio = parseFloat(document.getElementById("precio").value) || 0;
     document.getElementById("total").value = cantidad * precio;
 }
@@ -8,11 +9,13 @@ document.getElementById("cantidad").addEventListener("input", calcularTotal);
 document.getElementById("precio").addEventListener("input", calcularTotal);
 
 function agregarFila() {
+     
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombre").value;
     let cantidad = document.getElementById("cantidad").value;
     let precio = document.getElementById("precio").value;
     let total = document.getElementById("total").value;
+    
 
     let tabla = document.getElementById("tablaDatos").getElementsByTagName('tbody')[0];
     let newRow = tabla.insertRow(tabla.rows.length);

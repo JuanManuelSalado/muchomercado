@@ -2,76 +2,15 @@
 <html>
 <head>
     <title>Página Dividida</title>
-    <style>
-        body {
-            font-family: "Lucida Console", Courier, monospace;
-            border-color: #71d926;
-            border-width: 2px;
-            border-style: dashed;
-            color: #71d926;
-            background-color: #000;
-            margin: 2px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
-            margin: 0; /* Elimina márgenes predeterminados */
-        }
-        #contenedor {
-            display: flex;
-            flex: 1; /* Permite que el contenedor principal se expanda */
-        }
-        #bloque1, #bloque2, #bloque3 {
-            border: 1px solid;
-            padding: 10px;
-            flex: 1; /* Distribuye el espacio equitativamente */
-            overflow: auto; /* Agrega scroll si el contenido se desborda */
-        }
-        #parte1, #parte2, #parte3 {
-            border: 1px solid;
-            padding: 10px;
-            flex: 1; /* Distribuye el espacio equitativamente */
-            overflow: auto; /* Agrega scroll si el contenido se desborda */
-        }
-        #parte3 {
-            background-color: #FFF;
-        }
-        #bloque2{
-            background-color: #FFF;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-                
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: right; /* Alinea el texto a la derecha */
-        }
-        /* Estilo para inputs horizontales */
-        .horizontal_inputs > * {
-            display: inline-block; /* Muestra los elementos en línea */
-            width: 15%; /* Ajusta el ancho según necesites */
-            margin-right: 5px; /* Espacio entre inputs */
-        }
-        #bloque1{
-            border: 1px solid green;
-            padding: 8px;
-            text-align: center; /* Alinea el texto a la derecha */
-        }
-        .cuadro{
-            border: 3px solid green;
-            padding: 8px;
-            text-align: center; /* Alinea el texto a la derecha */
-        }
-    </style>
-</head>
+    <link rel="stylesheet" type="text/css" href="../css/stilo3.css">
+    </head>
 <body>
-
+    <!-- bloque del primer contenedor -->
 <div id="contenedor">
     <div id="bloque1"> 
         <h1>Primera prueba de captura</h1>
         <div class="cuadro">
+            <!-- la cabecera del primer contenedor -->
             <table id="tablaDatos2">
                 <thead>
                     <tr>
@@ -83,13 +22,16 @@
                     </tr>
                 </thead>
             </table>
+            <!-- los imput del primer contenedor -->
             <div class="horizontal_inputs">
                 <input type="text" id="codigo" placeholder="Código">
                 <input type="text" id="nombre" placeholder="Nombre">
                 <input type="number" id="cantidad" placeholder="Cantidad">
                 <input type="number" id="precio" placeholder="Precio">
                 <input type="number" id="total" placeholder="Total" readonly>
-                <button onclick="agregarFila()">Agregar</button>
+                <!-- la funcion agregarFila esta en script.js  -->
+
+                <button onclick="agregarFila()">Agregar</button> 
             </div>
         </div>
         <table id="tablaDatos">
@@ -102,6 +44,8 @@
                     <th>Total</th>
                 </tr>
             </thead>
+            <tbody>
+            </tbody>
         </table>
 
         <button onclick="guardarDatos()">Guardar Datos</button>

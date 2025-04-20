@@ -27,7 +27,7 @@ if (is_array($data)) {
             exit; // Detiene la ejecución en caso de error
         }
     }
-    echo "Datos guardados correctamente";
+    echo "Datos guardados correctamente 3";
 } else {
     echo "No se recibieron datos válidos";
 }
